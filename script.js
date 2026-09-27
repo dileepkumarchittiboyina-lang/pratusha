@@ -340,7 +340,7 @@ function showMemory(year) {
             <img
                 src="./teddy-2026.jpg"
                 class="memory-image"
-                alt="2026 teddy bear"
+                alt="2026 TEDDY BEAR"
             >
 
             <p>A cute little gift for 2026. ✨</p>
