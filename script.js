@@ -249,7 +249,7 @@ function showJourney() {
                     <div class="year-number">2026</div>
                     <div class="year-icon">🧸✨</div>
 
-                    <h2>A TEDDY BEAR</h2>
+                    <h2>A teddy bear</h2>
 
                     <p>
                         Another little gift,
@@ -323,9 +323,9 @@ function showMemory(year) {
             <h2>A BANGLE FOR YOU</h2>
 
             <img
-                src="./bangle-2025.jpg"
+                src="./bangle-2025.jpeg"
                 class="memory-image"
-                alt="2025 BANGLE"
+                alt="2025 bangle"
             >
 
             <p>A little bangle from 2025. ❤️</p>
@@ -338,9 +338,9 @@ function showMemory(year) {
             <h2>A TEDDY BEAR</h2>
 
             <img
-                src="./TEDDY -2026.jpg"
+                src="./teddy-2026.jpg"
                 class="memory-image"
-                alt="2026 TEDDY BEAR"
+                alt="2026 teddy bear"
             >
 
             <p>A cute little gift for 2026. ✨</p>
