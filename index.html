@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A Little Surprise ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- PIN SCREEN -->
+    <section class="pin-page" id="pinPage">
+
+        <div class="pin-glow"></div>
+
+        <div class="pin-container">
+
+            <div class="lock-icon">🔐</div>
+
+            <p class="small-text">A little secret...</p>
+
+            <h1>A Little Surprise</h1>
+
+            <p class="pin-subtitle">
+                Enter the PIN to begin
+            </p>
+
+            <input
+                type="password"
+                id="pinInput"
+                maxlength="4"
+                inputmode="numeric"
+                autocomplete="off"
+                placeholder="••••"
+            >
+
+            <button id="unlockButton">
+                Unlock ✨
+            </button>
+
+            <p id="pinError"></p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Opening Page -->
+    <section class="intro hidden">
+
+        <div class="glow"></div>
+
+        <div class="content">
+
+            <p class="small-text">
+                A little something for you...
+            </p>
+
+            <h1>
+                This Little Surprise
+                <span>is for you PRATUSHA</span>
+                💕
+            </h1>
+
+            <p class="description">
+                I made something special for your birthday.
+            </p>
+
+            <button id="startButton">
+                Begin the Surprise ✨
+            </button>
+
+        </div>
+
+    </section>
+<audio id="bgMusic" loop>
+    <source src="./music.mp3" type="audio/mpeg">
+</audio>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
