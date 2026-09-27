@@ -1,0 +1,1495 @@
+/* =====================================================
+   BIRTHDAY SURPRISE WEBSITE
+   Clean CSS
+===================================================== */
+
+/* ---------- RESET ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #05030b;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   COMMON
+===================================================== */
+
+button {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    padding: 15px 28px;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 30px rgba(255, 100, 160, 0.25);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.small-text {
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    opacity: 0.65;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: clamp(45px, 10vw, 85px);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+h1 span {
+    color: #ff82ad;
+    text-shadow: 0 0 20px rgba(255, 100, 160, 0.5);
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =====================================================
+   OPENING SCREEN
+===================================================== */
+
+.intro {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #3b1830 0%,
+            #180b18 45%,
+            #0f0710 100%
+        );
+}
+
+.glow {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: rgba(255, 90, 150, 0.15);
+    filter: blur(80px);
+    animation: glowPulse 4s infinite alternate;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    padding: 25px;
+    animation: fadeUp 1.5s ease;
+}
+
+.description {
+    font-size: 18px;
+    opacity: 0.75;
+    margin-bottom: 35px;
+}
+
+.intro.exit {
+    animation: introExit 1s ease forwards;
+}
+
+
+/* =====================================================
+   BIRTHDAY SCREEN
+===================================================== */
+
+.birthday {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 25px;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #4a1d3c,
+            #160914 70%
+        );
+
+    animation: birthdayAppear 1.5s ease;
+}
+
+.birthday-content {
+    position: relative;
+    z-index: 2;
+    width: min(700px, 100%);
+}
+
+.birthday h1 {
+    font-size: clamp(45px, 10vw, 85px);
+    color: #ff82ad;
+    margin-bottom: 25px;
+    text-shadow: 0 0 25px rgba(255, 100, 160, 0.4);
+}
+
+.birthday p:not(.small-text) {
+    font-size: 18px;
+    line-height: 1.7;
+    opacity: 0.8;
+    margin-bottom: 35px;
+}
+
+.her-name {
+    display: block;
+    color: #ff82ad;
+    margin-top: 10px;
+    text-shadow: 0 0 15px rgba(255, 100, 160, 0.5);
+    animation: nameReveal 2s ease;
+}
+
+
+/* ---------- STARS ---------- */
+
+.stars {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.stars span {
+    position: absolute;
+    color: white;
+    font-size: 12px;
+    opacity: 0;
+    animation: starTwinkle infinite ease-in-out;
+}
+
+
+/* =====================================================
+   THREE YEAR JOURNEY
+===================================================== */
+
+.journey-page {
+    min-height: 100vh;
+    padding: 80px 20px;
+    text-align: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 50% 10%,
+            #35104a,
+            #10070f 70%
+        );
+}
+
+.journey-header {
+    width: min(650px, 100%);
+    margin: 0 auto 70px;
+    animation: fadeUp 1s ease;
+}
+
+.journey-header h1 {
+    font-size: clamp(45px, 10vw, 75px);
+    color: #ff82ad;
+    margin-bottom: 20px;
+    text-shadow: 0 0 25px rgba(255, 100, 160, 0.35);
+}
+
+.journey-header > p:last-child {
+    line-height: 1.8;
+    opacity: 0.75;
+    font-size: 17px;
+}
+
+
+/* ---------- TIMELINE ---------- */
+
+.timeline {
+    width: min(650px, 100%);
+    margin: auto;
+}
+
+.year-card {
+    position: relative;
+    overflow: hidden;
+
+    padding: 35px 25px;
+    border-radius: 25px;
+
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+
+    cursor: pointer;
+
+    animation: cardReveal 1s ease both;
+    transition: 0.4s ease;
+}
+
+.year-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.11);
+    border-color: rgba(255, 130, 173, 0.35);
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.3),
+        0 0 30px rgba(255, 100, 160, 0.08);
+}
+
+.year-card:active {
+    transform: scale(0.98);
+}
+
+
+/* ---------- CARD SHINE ---------- */
+
+.year-card::before {
+    content: "";
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 60%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.08),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+    animation: cardShine 5s infinite;
+
+    pointer-events: none;
+}
+
+.year-number {
+    position: relative;
+    z-index: 2;
+
+    font-size: 30px;
+    font-weight: bold;
+    color: #ff82ad;
+    margin-bottom: 15px;
+}
+
+.year-icon {
+    position: relative;
+    z-index: 2;
+
+    font-size: 55px;
+    margin-bottom: 15px;
+
+    animation: iconFloat 3s ease-in-out infinite;
+}
+
+.year-card h2,
+.year-card p {
+    position: relative;
+    z-index: 2;
+}
+
+.year-card h2 {
+    margin-bottom: 15px;
+}
+
+.year-card p {
+    line-height: 1.8;
+    opacity: 0.7;
+}
+
+
+/* ---------- TIMELINE LINE ---------- */
+
+.line {
+    width: 2px;
+    height: 60px;
+    background: rgba(255, 130, 173, 0.5);
+    margin: auto;
+}
+
+#messageButton {
+    margin-top: 60px;
+}
+
+
+/* =====================================================
+   MEMORY POPUP
+===================================================== */
+
+.memory-popup {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background: rgba(5, 2, 15, 0.82);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.4s ease;
+}
+
+.memory-popup.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#memoryContent {
+    position: relative;
+
+    width: 100%;
+    max-width: 430px;
+    max-height: 85vh;
+
+    overflow-y: auto;
+
+    padding: 30px;
+    text-align: center;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(120, 60, 180, 0.25),
+            rgba(20, 10, 40, 0.95)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    box-shadow:
+        0 0 40px rgba(150, 70, 255, 0.25),
+        0 30px 80px rgba(0, 0, 0, 0.6);
+
+    transform: scale(0.85);
+    transition: 0.4s ease;
+}
+
+.memory-popup.show #memoryContent {
+    transform: scale(1);
+}
+
+.close-memory {
+    position: absolute;
+
+    top: 12px;
+    right: 15px;
+
+    width: 38px;
+    height: 38px;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.12);
+    color: white;
+
+    font-size: 25px;
+    cursor: pointer;
+
+    z-index: 10;
+}
+
+.close-memory:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.memory-year {
+    font-size: 14px;
+    letter-spacing: 4px;
+    opacity: 0.7;
+    margin-bottom: 10px;
+}
+
+.memory-icon {
+    font-size: 55px;
+    margin: 10px;
+}
+
+#memoryContent h2 {
+    margin-bottom: 20px;
+}
+
+#memoryContent p {
+    line-height: 1.7;
+    opacity: 0.9;
+}
+
+
+/* ---------- MEMORY IMAGES ---------- */
+
+.memory-image {
+    display: block;
+
+    width: 100%;
+    max-width: 380px;
+    max-height: 480px;
+
+    object-fit: contain;
+
+    margin: 15px auto;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 0 30px rgba(180, 90, 255, 0.22);
+
+    background: rgba(255, 255, 255, 0.03);
+}
+
+
+/* =====================================================
+   LETTER PAGE
+===================================================== */
+
+.letter-page {
+    min-height: 100vh;
+
+    padding: 60px 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #40182f,
+            #10070f 75%
+        );
+
+    color: white;
+}
+
+.letter-container {
+    width: 100%;
+    max-width: 750px;
+    text-align: center;
+}
+
+.letter-container h1 {
+    font-size: clamp(42px, 8vw, 70px);
+    color: #ff82ad;
+    margin: 10px 0 35px;
+
+    text-shadow:
+        0 0 25px rgba(255, 100, 160, 0.4);
+}
+
+
+/* ---------- LETTER BOX ---------- */
+
+.letter-box {
+    position: relative;
+
+    width: 100%;
+    min-height: 380px;
+
+    padding: 40px;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.10),
+            rgba(255, 255, 255, 0.04)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.16);
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.35),
+        0 0 40px rgba(150, 80, 255, 0.08);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    text-align: left;
+    overflow: hidden;
+}
+
+
+/* ---------- LETTER DECORATION ---------- */
+
+.letter-box::before {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    top: -100px;
+    right: -80px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 100, 190, 0.12);
+
+    filter: blur(50px);
+
+    pointer-events: none;
+}
+
+.letter-box::after {
+    content: "";
+
+    position: absolute;
+
+    left: 40px;
+    right: 40px;
+    top: 18px;
+
+    height: 1px;
+
+    background: rgba(255, 255, 255, 0.12);
+}
+
+
+/* ---------- TYPEWRITER ---------- */
+
+#letterText {
+    position: relative;
+    z-index: 5;
+
+    margin: 0;
+
+    color: white;
+
+    font-size: 17px;
+    line-height: 2;
+
+    white-space: pre-line;
+}
+
+#letterText::after {
+    content: "|";
+    animation: blink 0.7s infinite;
+}
+
+#surpriseButton {
+    margin-top: 30px;
+}
+
+
+/* =====================================================
+   FINAL SURPRISE
+===================================================== */
+
+.final-page {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 20px;
+
+    position: relative;
+    overflow: hidden;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(130, 70, 255, 0.30),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 20% 80%,
+            rgba(255, 70, 170, 0.20),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #030208,
+            #120820,
+            #05030b
+        );
+}
+
+.final-content {
+    position: relative;
+    z-index: 5;
+
+    width: 100%;
+    max-width: 650px;
+
+    animation: finalAppear 1.2s ease;
+}
+
+.final-small {
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    opacity: 0.65;
+    margin-bottom: 25px;
+}
+
+.final-content h1 {
+    font-size: clamp(40px, 10vw, 70px);
+    color: #ff82c8;
+    margin-bottom: 15px;
+
+    text-shadow:
+        0 0 25px rgba(255, 80, 180, 0.5);
+}
+
+.final-subtitle {
+    opacity: 0.7;
+    font-size: 17px;
+}
+
+
+/* =====================================================
+   GIFT BOX
+===================================================== */
+
+.gift {
+    position: relative;
+
+    width: 150px;
+    height: 130px;
+
+    margin: 60px auto 20px;
+
+    cursor: pointer;
+
+    animation:
+        giftFloat 2.5s ease-in-out infinite;
+
+    filter:
+        drop-shadow(
+            0 15px 25px rgba(255, 70, 180, 0.25)
+        );
+
+    transition: transform 0.3s ease;
+}
+
+.gift:hover {
+    transform: scale(1.08);
+}
+
+.gift-box {
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 150px;
+    height: 100px;
+
+    border-radius: 8px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #d94b9b,
+            #762b9d
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.gift-box::before {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 0;
+
+    transform: translateX(-50%);
+
+    width: 24px;
+    height: 100%;
+
+    background: #ffd166;
+}
+
+
+/* ---------- GIFT LID ---------- */
+
+.gift-lid {
+    position: absolute;
+
+    z-index: 3;
+
+    top: 10px;
+    left: -8px;
+
+    width: 166px;
+    height: 35px;
+
+    border-radius: 7px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ed65ad,
+            #8d39ae
+        );
+
+    transition:
+        transform 0.7s ease;
+}
+
+.gift-lid::before {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 0;
+
+    transform: translateX(-50%);
+
+    width: 26px;
+    height: 35px;
+
+    background: #ffd166;
+}
+
+.gift.open .gift-lid {
+    transform:
+        translateY(-75px)
+        rotate(-8deg);
+}
+
+
+/* ---------- TAP TEXT ---------- */
+
+.tap-text {
+    font-size: 15px;
+    opacity: 0.7;
+
+    animation:
+        tapPulse 1.5s infinite;
+}
+
+
+/* =====================================================
+   FINAL MESSAGE
+===================================================== */
+
+.final-message {
+    max-height: 0;
+
+    opacity: 0;
+
+    overflow: hidden;
+
+    margin-top: 0;
+    padding: 0 25px;
+
+    border-radius: 25px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    transform: translateY(25px);
+
+    transition:
+        max-height 1s ease,
+        opacity 1s ease,
+        margin-top 1s ease,
+        padding 1s ease,
+        transform 1s ease;
+}
+
+.final-message.show {
+    max-height: 600px;
+
+    opacity: 1;
+
+    margin-top: 35px;
+
+    padding: 30px 25px;
+
+    transform: translateY(0);
+}
+
+.final-message h2 {
+    font-size: clamp(30px, 7vw, 50px);
+    color: #ffb1dc;
+    margin-bottom: 20px;
+}
+
+.final-message p {
+    font-size: 17px;
+    line-height: 1.9;
+    opacity: 0.82;
+}
+
+
+/* =====================================================
+   CONFETTI
+===================================================== */
+
+.confetti {
+    position: absolute;
+
+    top: -20px;
+
+    width: 8px;
+    height: 14px;
+
+    border-radius: 2px;
+
+    background: white;
+
+    opacity: 0.9;
+
+    animation:
+        confettiFall linear forwards;
+}
+
+
+/* Give the confetti some variation */
+
+.confetti:nth-child(3n) {
+    background: #ff82ad;
+}
+
+.confetti:nth-child(3n + 1) {
+    background: #c77dff;
+}
+
+.confetti:nth-child(3n + 2) {
+    background: #ffd166;
+}
+
+
+/* =====================================================
+   PIN SCREEN
+===================================================== */
+
+.pin-page {
+    position: fixed;
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            #3b145c,
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at 20% 80%,
+            #190b35,
+            transparent 45%
+        ),
+        #05030b;
+
+    overflow: hidden;
+}
+
+.pin-glow {
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    background: #8b3dff;
+
+    border-radius: 50%;
+
+    filter: blur(120px);
+
+    opacity: 0.18;
+
+    animation:
+        pinGlow 4s ease-in-out infinite;
+}
+
+.pin-container {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 380px;
+
+    padding: 45px 30px;
+
+    text-align: center;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(130, 70, 200, 0.18),
+            rgba(255, 255, 255, 0.05)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    box-shadow:
+        0 0 50px rgba(140, 70, 255, 0.15),
+        0 30px 80px rgba(0, 0, 0, 0.6);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    animation:
+        pinAppear 1s ease;
+}
+
+.lock-icon {
+    font-size: 55px;
+    margin-bottom: 15px;
+
+    animation:
+        lockFloat 3s ease-in-out infinite;
+}
+
+.pin-container h1 {
+    margin: 10px 0;
+
+    font-size: 32px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #d7a6ff,
+            #ffffff
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+.pin-subtitle {
+    margin: 15px 0 25px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* ---------- PIN INPUT ---------- */
+
+#pinInput {
+    display: block;
+
+    width: 180px;
+
+    margin: 0 auto 20px;
+
+    padding: 15px;
+
+    text-align: center;
+
+    font-size: 25px;
+    letter-spacing: 10px;
+
+    color: white;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    border-radius: 15px;
+
+    outline: none;
+
+    transition: 0.3s ease;
+}
+
+#pinInput:focus {
+    border-color: rgba(190, 120, 255, 0.8);
+
+    box-shadow:
+        0 0 20px rgba(150, 70, 255, 0.25);
+}
+
+#pinInput::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+    letter-spacing: 8px;
+}
+
+
+/* ---------- UNLOCK BUTTON ---------- */
+
+#unlockButton {
+    width: 180px;
+
+    padding: 14px 20px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7138c8,
+            #a34de8
+        );
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 30px rgba(130, 50, 220, 0.3);
+
+    transition: 0.3s ease;
+}
+
+#unlockButton:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 35px rgba(150, 70, 255, 0.45);
+}
+
+#pinError {
+    min-height: 22px;
+
+    margin-top: 18px;
+
+    color: #ff8fcf;
+
+    font-size: 14px;
+}
+
+.pin-page.unlocking {
+    animation:
+        pinExit 0.8s ease forwards;
+}
+
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glowPulse {
+    from {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+
+    to {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+@keyframes introExit {
+    to {
+        opacity: 0;
+        transform: scale(1.15);
+        filter: blur(10px);
+    }
+}
+
+@keyframes birthdayAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes starTwinkle {
+    0%,
+    100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: scale(1.3);
+    }
+}
+
+@keyframes nameReveal {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+        filter: blur(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+@keyframes cardReveal {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes cardShine {
+    0% {
+        left: -100%;
+    }
+
+    35% {
+        left: 140%;
+    }
+
+    100% {
+        left: 140%;
+    }
+}
+
+@keyframes iconFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes finalAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes giftFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes tapPulse {
+    0%,
+    100% {
+        opacity: 0.45;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes confettiFall {
+    from {
+        transform:
+            translateY(-20px)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+    }
+}
+
+@keyframes pinAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes pinGlow {
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.15;
+    }
+
+    50% {
+        transform: scale(1.25);
+        opacity: 0.25;
+    }
+}
+
+@keyframes lockFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes pinExit {
+    to {
+        opacity: 0;
+        transform: scale(1.08);
+        visibility: hidden;
+    }
+}
+
+
+/* =====================================================
+   MOBILE RESPONSIVE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 48px;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+
+    .small-text {
+        font-size: 11px;
+        letter-spacing: 3px;
+    }
+
+    /* Journey */
+
+    .journey-page {
+        padding: 70px 18px;
+    }
+
+    .journey-header {
+        margin-bottom: 50px;
+    }
+
+    .year-card {
+        padding: 30px 20px;
+    }
+
+    .year-number {
+        font-size: 27px;
+    }
+
+    .year-icon {
+        font-size: 48px;
+    }
+
+    /* Memory */
+
+    #memoryContent {
+        max-width: 92vw;
+        max-height: 88vh;
+        padding: 25px 18px;
+    }
+
+    .memory-image {
+        max-height: 55vh;
+        max-width: 100%;
+    }
+
+    /* Letter */
+
+    .letter-page {
+        padding: 40px 15px;
+        align-items: flex-start;
+        padding-top: 60px;
+    }
+
+    .letter-container h1 {
+        font-size: 32px;
+    }
+
+    .letter-box {
+        padding: 28px 20px;
+        min-height: 430px;
+    }
+
+    #letterText {
+        font-size: 15px;
+        line-height: 1.9;
+    }
+
+    /* Final */
+
+    .final-page {
+        padding: 25px 18px;
+    }
+
+    .final-content h1 {
+        font-size: 34px;
+    }
+
+    .final-message.show {
+        padding: 25px 18px;
+    }
+
+    .final-message p {
+        font-size: 15px;
+    }
+
+    /* Gift */
+
+    .gift {
+        margin-top: 45px;
+        transform: scale(0.9);
+    }
+
+    /* PIN */
+
+    .pin-container {
+        padding: 40px 22px;
+    }
+
+    .pin-container h1 {
+        font-size: 28px;
+    }
+
+    .lock-icon {
+        font-size: 48px;
+    }
+}
+
+
+/* =====================================================
+   VERY SMALL PHONES
+===================================================== */
+
+@media (max-width: 380px) {
+
+    h1 {
+        font-size: 40px;
+    }
+
+    .birthday h1 {
+        font-size: 42px;
+    }
+
+    .year-card {
+        padding: 25px 16px;
+    }
+
+    .letter-box {
+        padding: 24px 16px;
+    }
+
+    #pinInput,
+    #unlockButton {
+        width: 160px;
+    }
+
+    .gift {
+        transform: scale(0.82);
+    }
+}
