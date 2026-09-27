@@ -338,7 +338,7 @@ function showMemory(year) {
             <h2>A TEDDY BEAR</h2>
 
             <img
-                src="./teddy-2026.jpg"
+                src="./teddy-2026.jpeg"
                 class="memory-image"
                 alt="2026 TEDDY BEAR"
             >
